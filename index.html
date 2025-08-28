@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/site-icon-bgremoved.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Art Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'soft-pink': {
+                50: '#fdf2f8',
+                100: '#fce7f3',
+                200: '#fbcfe8',
+                300: '#f9a8d4',
+                400: '#f472b6',
+                500: '#ec4899',
+                600: '#db2777',
+                700: '#be185d',
+                800: '#9d174d',
+                900: '#831843',
+              },
+              'soft-blue': {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                200: '#bfdbfe',
+                300: '#93c5fd',
+                400: '#60a5fa',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                800: '#1e40af',
+                900: '#1e3a8a',
+              },
+              'soft-black': {
+                50: '#f9fafb',
+                100: '#f3f4f6',
+                200: '#e5e7eb',
+                300: '#d1d5db',
+                400: '#9ca3af',
+                500: '#6b7280',
+                600: '#4b5563',
+                700: '#374151',
+                800: '#1f2937',
+                900: '#111827',
+              }
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              }
+            },
+            backgroundImage: {
+              'gradient-soft': 'linear-gradient(to bottom right, #fdf2f8, #eff6ff, #f3f4f6)',
+              'gradient-soft-dark': 'linear-gradient(to bottom right, #1f2937, #111827, #1e3a8a)',
+              'gradient-button': 'linear-gradient(to right, #ec4899, #3b82f6)',
+              'gradient-button-dark': 'linear-gradient(to right, #db2777, #2563eb)',
+              'gradient-text': 'linear-gradient(to right, #ec4899, #1f2937, #3b82f6)',
+              'gradient-text-dark': 'linear-gradient(to right, #f472b6, #d1d5db, #60a5fa)',
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
