@@ -26,7 +26,7 @@ const Home = () => {
         >
           {/* Replace the h1 with the logo image */}
           <img 
-            src="public/site-icon-bgremoved.png" 
+            src="/site-icon-bgremoved.png" 
             alt="Aisha Designs Logo"
             className="h-auto max-w-full animate-bounce mx-auto"
             style={{ maxHeight: '200px' }}
