@@ -22,21 +22,25 @@ const About = () => {
         </motion.h2>
         
         <div className="flex flex-col md:flex-row gap-12 items-center">
-          <motion.div 
+            <motion.div 
             className="md:w-1/2"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-          >
+            >
             <div className="relative">
               <div className="w-80 h-80 mx-auto bg-gradient-to-br from-soft-pink-200 to-soft-blue-200 dark:from-soft-pink-800 dark:to-soft-blue-800 rounded-full overflow-hidden shadow-xl flex items-center justify-center text-6xl">
-                👩‍🎨
+              <img
+                src="/aisha-profile-picture.jpg"
+                alt="Profile Picture"
+                className="w-full h-full object-cover"
+                style={{ display: 'block' }}
+                onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
+              />
               </div>
-              <div className="absolute -bottom-2 -right-4 w-24 h-24 bg-soft-black-200 dark:bg-soft-black-600 rounded-full opacity-70 -z-10"></div>
-              <div className="absolute -top-4 -left-4 w-16 h-16 bg-soft-pink-200 dark:bg-soft-pink-800 rounded-full opacity-70 -z-10"></div>
             </div>
-          </motion.div>
+            </motion.div>
           
           <motion.div 
             className="md:w-1/2"
@@ -47,7 +51,7 @@ const About = () => {
           >
             <h3 className="text-2xl font-semibold mb-4 text-soft-black-800 dark:text-soft-black-200">Hello! I'm Aisha</h3>
             <p className="text-soft-black-600 dark:text-soft-black-400 mb-6 leading-relaxed">
-              I'm a filipina digital artist and designer passionate about creating beautiful things that inspire creativity and a strong desire to express myself.
+I’m a Filipina digital artist and designer driven by a passion for crafting meaningful, beautiful works that spark creativity and serve as a powerful expression of who I am.
             </p>
             <div className="space-y-4">
               {skills.map((skill, index) => (

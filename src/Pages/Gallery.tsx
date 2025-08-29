@@ -117,29 +117,38 @@ const Gallery = () => {
 
         {/* Artwork Detail Modal */}
   {selectedArtwork && (
-  <div 
-    className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-    onClick={closeArtwork}
-  >
-    <motion.div 
-      className="bg-white dark:bg-soft-black-800 rounded-xl p-6 w-72 h-96 flex flex-col justify-between items-center" // Thinner modal
-      onClick={e => e.stopPropagation()}
+    <motion.div
+      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={closeArtwork}
     >
-      <img 
-        src={selectedArtwork.image} 
-        alt={selectedArtwork.title} 
-        className="mb-4 w-full h-64 object-contain"
-      />
-      <h3 className="font-semibold text-lg text-soft-black-800 dark:text-soft-black-200 mb-1 text-center">{selectedArtwork.title}</h3>
-      <span className="text-sm text-soft-pink-500 dark:text-soft-pink-400 capitalize text-center">{selectedArtwork.category}</span>
-      <div className="flex justify-end mt-4 w-full">
-        <button className="px-3 py-2 bg-soft-pink-500 text-white rounded" onClick={closeArtwork}>
-          Close
+      <motion.div
+        className="bg-white dark:bg-soft-black-800 rounded-xl p-6 w-64 h-96 flex flex-col items-center relative"
+        initial={{ scale: 0.8, opacity: 0, y: 40 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.8, opacity: 0, y: 40 }}
+        transition={{ type: "spring", stiffness: 300, damping: 25 }}
+        onClick={e => e.stopPropagation()}
+      >
+        <button
+          className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-lg bg-soft-pink-50 dark:bg-soft-pink-900 text-2xl text-soft-black-600 dark:text-soft-black-200 hover:bg-soft-pink-100 dark:hover:bg-soft-pink-700 hover:text-soft-pink-500 dark:hover:text-soft-pink-400 transition"
+          onClick={closeArtwork}
+          aria-label="Close"
+        >
+          ×
         </button>
-      </div>
+        <img
+          src={selectedArtwork.image}
+          alt={selectedArtwork.title}
+          className="mb-4 w-full h-72 object-contain" // increased height from h-56 to h-72
+        />
+        <h3 className="font-semibold text-lg text-soft-black-800 dark:text-soft-black-200 mb-1 text-center">{selectedArtwork.title}</h3>
+        <span className="text-sm text-soft-pink-500 dark:text-soft-pink-400 capitalize text-center">{selectedArtwork.category}</span>
+      </motion.div>
     </motion.div>
-  </div>
-)}
+  )}
       </div>
     </section>
   );
