@@ -4,8 +4,8 @@ const About = () => {
   const skills = [
     { name: 'Drawing', icon: '✏️', level: 90 },
     { name: 'Painting', icon: '🎨', level: 85 },
-    { name: 'Digital Art', icon: '💻', level: 80 },
-    { name: 'Design', icon: '✨', level: 75 },
+    { name: 'Digital Art', icon: '💻', level: 90 },
+    { name: 'Design', icon: '✨', level: 85 },
   ];
 
   return (
@@ -47,8 +47,7 @@ const About = () => {
           >
             <h3 className="text-2xl font-semibold mb-4 text-soft-black-800 dark:text-soft-black-200">Hello! I'm Aisha</h3>
             <p className="text-soft-black-600 dark:text-soft-black-400 mb-6 leading-relaxed">
-              I'm a 16-year-old artist and designer passionate about creating beautiful things that inspire joy. 
-              My journey in art started when I was just a little girl, and it has grown into my favorite way to express myself.
+              I'm a filipina digital artist and designer passionate about creating beautiful things that inspire creativity and a strong desire to express myself.
             </p>
             <div className="space-y-4">
               {skills.map((skill, index) => (
